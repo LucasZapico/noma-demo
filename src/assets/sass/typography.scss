@@ -1,0 +1,230 @@
+@mixin headerType($header-family, $header-line-height, $header-weight) {
+
+  .display,
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: $header-family;
+    line-height: $header-line-height;
+    margin: 0px;
+    font-weight: $header-weight;
+  }
+}
+
+@mixin baseType($base-family, $base-weight, $base-line-height, $type-base-size) {
+
+  body,
+  p,
+  ul,
+  ol,
+  dl,
+  figure,
+  blockquote,
+  table,
+  hr,
+  .body,
+  .body__sm,
+  .body__lg {
+    font-family: $base-family;
+    font-weight: $base-weight;
+    line-height: $base-line-height;
+    font-size: $type-base-size;
+  }
+}
+
+strong,
+.strong {
+  font-family: $base-family;
+  font-weight: 700;
+}
+
+em,
+.em {
+  font-family: $base-family;
+  font-style: italic;
+}
+
+blockquote {
+  background-color: #fbfbfb;
+  padding: 0.5rem;
+  border-left: darken(#fbfbfb, 10%) solid 10px;
+}
+
+pre {
+  code {
+    display: block;
+    white-space: pre-wrap;
+  }
+}
+
+@mixin h1 {
+  font-size: $type-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+}
+
+@mixin h2 {
+  font-size: $type-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+}
+
+@mixin h3 {
+  font-size: $type-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+}
+
+@mixin h4 {
+  font-size: $type-base-size * $type-scaler * $type-scaler * $type-scaler;
+}
+
+@mixin h5 {
+  font-size: $type-base-size * $type-scaler * $type-scaler;
+}
+
+@mixin h6 {
+  font-size: $type-base-size;
+}
+
+@mixin h6 {
+  font-size: $type-base-size;
+}
+
+@mixin char__readable($type-width) {
+  max-width: $type-width;
+}
+
+
+@mixin typeScales($header-base-size, $type-scaler) {
+  .display {
+    font-size: $header-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+  }
+
+
+  h1,
+  .h1,
+  .exa {
+    font-size: $header-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+  }
+
+  h2,
+  .h2,
+  .peta {
+    font-size: $header-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+  }
+
+  h3,
+  .h3,
+  .tera {
+    font-size: $header-base-size * $type-scaler * $type-scaler * $type-scaler * $type-scaler;
+  }
+
+  h4,
+  .h4,
+  .giga {
+    font-size: $header-base-size * $type-scaler * $type-scaler * $type-scaler;
+  }
+
+  h5,
+  .h5,
+  .mega {
+    font-size: $header-base-size * $type-scaler * $type-scaler;
+  }
+
+  .kilo-1 {
+    font-size: $header-base-size * $type-scaler;
+  }
+
+  h6,
+  .h6,
+  .kilo {
+    font-size: $header-base-size * $type-scaler;
+  }
+
+  .body {
+    font-size: $type-base-size;
+
+    &__lg {
+      font-size: $type-base-size * $type-scaler;
+    }
+
+    &__sm {
+      font-size: $type-base-size * .8;
+    }
+  }
+
+  .micro {
+    font-size: 0.5rem;
+  }
+
+  .milli {
+    font-size: $header-base-size/$type-scaler;
+  }
+}
+
+/***
+** Measure 
+***/
+
+@media screen and (min-width: 100px) {
+  .measure {
+    max-width: 620px;
+
+    &__lg {
+      max-width: 620px;
+    }
+
+    &__md {
+      max-width: 620px;
+    }
+
+    &__sm {
+      max-width: 620px;
+    }
+  }
+}
+
+// 700px and up
+@media screen and (min-width: $media-small) {}
+
+// 960px
+
+@media screen and (min-width: $media-med) {}
+
+@media screen and (min-width: $media-large) {}
+
+@media screen and (min-width: $media-xlarge) {}
+
+
+// declarations
+
+
+@media screen and (min-width: 100px) {
+  $type-scaler: 1.25;
+
+  @include headerType($header-family, $header-line-height, $header-weight);
+  @include typeScales($type-base-size, $type-scaler);
+}
+
+// 700px and up
+@media screen and (min-width: $media-small) {
+  $type-scaler: 1.35;
+  @include headerType($header-family, $header-line-height, $header-weight);
+  @include typeScales($type-base-size, $type-scaler);
+}
+
+// 960px
+
+@media screen and (min-width: $media-med) {
+  $type-scaler: 1.4;
+  @include headerType($header-family, $header-line-height, $header-weight);
+  @include typeScales($type-base-size, $type-scaler);
+}
+
+@media screen and (min-width: $media-large) {}
+
+@media screen and (min-width: $media-xlarge) {}

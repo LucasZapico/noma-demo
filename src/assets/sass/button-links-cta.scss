@@ -1,0 +1,62 @@
+button {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  cursor: pointer;
+  color: $color-grey-7;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $color-grey-5;
+  }
+}
+
+
+button,
+a,
+div {
+  &.link {
+    &__pri {
+      &.lg {
+        height: 100px;
+        width: 100px;
+      }
+
+      // box-sizing: border-box;
+      font-size: .8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // align-items: center;
+      height: 50px;
+      width: 50px;
+      padding: 1.5rem;
+      border-radius: 100%;
+      border: solid 1px $color-grey-5;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: transparent;
+
+      svg {
+        font-size: 3rem;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-grey-8;
+        background-color: $color-light;
+      }
+    }
+  }
+}
+
+.link__pri+.link__pri {
+  margin-left: -20px;
+}

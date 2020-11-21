@@ -1,0 +1,75 @@
+/***
+** home
+***/
+
+.hero {
+  h1 {
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+  }
+}
+
+.menu {
+  ul {
+    list-style-type: none;
+  }
+
+  &__img {
+    width: 100px;
+  }
+}
+
+.no-sm {
+  overflow: hidden;
+  height: 0px;
+  width: 0px;
+
+}
+
+.only-sm {
+  height: auto;
+  width: auto;
+}
+
+// 700px and up
+@media screen and (min-width: $media-small) {
+  .no-sm {
+    height: auto;
+    width: auto;
+  }
+
+  .only-sm {
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+  }
+
+  // hack 
+
+}
+
+// 960px 
+@media screen and (min-width: $media-med) {
+
+
+  .no-md {
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+
+  }
+}
+
+@media screen and (min-width: $media-large) {
+  .no-md {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: $media-xlarge) {}

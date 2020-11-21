@@ -1,0 +1,7 @@
+.demo {
+  @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+  $header-family: 'Xanh Mono', monospace;
+  $header-line-height: 1.5;
+  $header-weight: 300;
+  @include headerType($header-family, $header-line-height, $header-weight)
+}
