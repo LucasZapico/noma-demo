@@ -122,28 +122,28 @@ const Featured = ({ data }) => {
               </li>
             </ul>
           </div>
-          <div className="flex justify__between margin__y ">
+          <div className="flex flex__wrap justify__between margin__y">
             <div className="menu__img ">
               <Img
-                fluid={data.heroImgOne.childImageSharp.fluid}
+                fluid={data.forImgOne.childImageSharp.fluid}
                 objectFit="contain"
               />
             </div>
             <div className="menu__img">
               <Img
-                fluid={data.heroImgTwo.childImageSharp.fluid}
+                fluid={data.forImgTwo.childImageSharp.fluid}
                 objectFit="contain"
               />
             </div>
             <div className="menu__img">
               <Img
-                fluid={data.heroImgThree.childImageSharp.fluid}
+                fluid={data.forImgThree.childImageSharp.fluid}
                 objectFit="contain"
               />
             </div>
             <div className="menu__img">
               <Img
-                fluid={data.heroImgFour.childImageSharp.fluid}
+                fluid={data.forImgFour.childImageSharp.fluid}
                 objectFit="contain"
               />
             </div>
@@ -243,7 +243,7 @@ const HomePage = ({ data }) => {
                     of course accommodate dietary restrictions).
                   </div>
                 </div>
-                <div className="flex justify__between margin__y">
+                <div className="flex flex__wrap justify__between margin__y">
                   <div className="menu__img ">
                     <Img
                       fluid={data.sumImgOne.childImageSharp.fluid}
@@ -338,6 +338,34 @@ export const pageQuery = graphql`
     ) {
       childImageSharp {
         fluid(maxWidth: 350) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    forImgOne: file(relativePath: { eq: "forest/meat5.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 450) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    forImgTwo: file(relativePath: { eq: "forest/meat1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 450) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    forImgThree: file(relativePath: { eq: "forest/meat2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 450) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    forImgFour: file(relativePath: { eq: "forest/meat3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 450) {
           ...GatsbyImageSharpFluid
         }
       }
