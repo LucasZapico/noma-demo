@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import { IoIosArrowRoundForward, IoIosArrowRoundDown } from "react-icons/io"
 import { BsDash } from "react-icons/bs"
 import { useSpring, animated as a } from "react-spring"
-import { useMeasure } from "../helpers"
+import useMeasure from "../helpers"
 
 const initMenu = {
   gameMenu: false,
@@ -184,9 +184,9 @@ const Featured = ({ data }) => {
 }
 
 const HomePage = ({ data }) => {
-  const docs = data.docs.edges
-  const [bind, { height }] = useMeasure()
   const [showMenu, setShowMenu] = useState(initMenu)
+  const [bind, { height }] = useMeasure()
+  const docs = data.docs.edges
   const props = useSpring({
     height: showMenu.summerMenu ? height : 0,
     config: { duration: 1000 },
