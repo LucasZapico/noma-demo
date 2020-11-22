@@ -13,8 +13,8 @@ const ReservationPage = () => {
 
   return (
     <Layout>
-      <div className="page w__100 w__80--lg center">
-        <div className="flex flex__column flex__row--md justify__between margin__y--m">
+      <div className="page w__100 w__80--lg center padding__all">
+        <div className="flex flex__column flex__row--md justify__between margin__y--m ">
           <div>
             <h1 className="uppercase color__sec h2">Reservation</h1>
             <h4 className="strong uppercase margin__bottom--m">
@@ -44,18 +44,32 @@ const ReservationPage = () => {
           DKK 2,800 per person
         </p>
 
-        <div className="card margin__y--l">
-          {/* <form onSubmit={handleSubmit(onSubmit)}>
-          
-            <input name="guest" defaultValue="test" ref={register} />
+        <div className="card padding__y--m">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="w__50">
+              <label className="db">Guests</label>
+              <select name="Guests" ref={register}>
+                <option value="1">one</option>
+                <option value="2">two</option>
+                <option value="3">three</option>
+              </select>
+            </div>
+            <label>Group</label>
+            <select name="Group" ref={register}>
+              <option value="10:30">10:30</option>
+              <option value="12:30">12:30</option>
+              <option value="13:30">13:30</option>
+            </select>
+            <input
+              name="reservationName"
+              defaultValue="reservations name"
+              ref={register({ required: true })}
+            />
 
-          
-            <input name="data" ref={register({ required: true })} />
-          
-            {errors.exampleRequired && <span>This field is required</span>}
+            {errors.reservationName && <span>This field is required</span>}
 
-            <input type="Search" />
-          </form> */}
+            <input type="submit" value="search" />
+          </form>
         </div>
       </div>
     </Layout>

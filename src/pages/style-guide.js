@@ -45,7 +45,7 @@ const StyleGuidePage = () => {
 
   return (
     <Layout>
-      <div className="container style-guide">
+      <div className="page container style-guide">
         <div className="container__content style-guide">
           <h1>Style Guide</h1>
           <section className="color section">
