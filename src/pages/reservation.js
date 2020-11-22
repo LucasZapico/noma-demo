@@ -5,7 +5,7 @@ import Link from "gatsby-plugin-transition-link/AniLink"
 import { useForm } from "react-hook-form"
 import { BsDash } from "react-icons/bs"
 import { IoIosArrowRoundBack } from "react-icons/io"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 
 const ReservationPage = () => {
   const { register, handleSubmit, watch, errors } = useForm()
