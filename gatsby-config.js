@@ -8,16 +8,15 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "Game and Forest Demo",
-    description: "A collection of styles used alot by Lucas",
+    description: "",
     author: "@NorthernWindSouthernSun",
     siteUrl: "https://lucaszapico.space",
   },
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-transition-link",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-transition-link",
     "gatsby-plugin-lodash",
     `gatsby-transformer-remark`,
     "gatsby-plugin-catch-links",
