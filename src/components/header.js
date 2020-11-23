@@ -4,7 +4,6 @@ import { IoIosMenu, IoIosClose } from "react-icons/io"
 import Navigation from "./nav"
 
 const Header = ({ siteTitle }) => {
-  const [showMenu, setShowMenu] = useState(false)
   return (
     <header className="">
       <Navigation />
