@@ -21,7 +21,13 @@ const ReservationPage = () => {
               Game & Forest
             </h4>
           </div>
-          <Link className="link link__pri lg" to="/" swipe direction="right">
+          <Link
+            className="link link__pri lg"
+            to="/"
+            swipe
+            top="entry"
+            direction="right"
+          >
             <IoIosArrowRoundBack /> Back Home
           </Link>
         </div>

@@ -15,7 +15,13 @@ const ContactPage = () => {
           <div>
             <h1 className="uppercase color__sec">Contact</h1>
           </div>
-          <Link className="link link__pri lg" to="/" swipe direction="right">
+          <Link
+            className="link link__pri lg"
+            to="/"
+            swipe
+            top="entry"
+            direction="right"
+          >
             <IoIosArrowRoundBack /> Back Home
           </Link>
         </div>
