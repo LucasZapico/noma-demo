@@ -7,7 +7,8 @@ import Layout from "../components/layout"
 import { IoIosArrowRoundForward, IoIosArrowRoundDown } from "react-icons/io"
 import { BsDash } from "react-icons/bs"
 import { useSpring, animated as a } from "react-spring"
-import useMeasure from "../helpers"
+// import useMeasure from "../hooks"
+import { useMeasure } from "react-use"
 
 const initMenu = {
   gameMenu: false,
@@ -32,15 +33,20 @@ const Featured = ({ data }) => {
               className="link link__pri lg"
               to="/reservation"
               swipe
+              top="entry"
               direction="left"
             >
               <IoIosArrowRoundForward /> Book Now
             </Link>
             <div
               className="link link__pri lg "
-              onClick={() =>
-                setShowMenu({ ...showMenu, gameMenu: !showMenu.gameMenu })
-              }
+              onClick={() => {
+                console.log("height", height)
+                return setShowMenu({
+                  ...showMenu,
+                  gameMenu: !showMenu.gameMenu,
+                })
+              }}
             >
               <IoIosArrowRoundDown /> View Menu
             </div>
@@ -80,7 +86,9 @@ const Featured = ({ data }) => {
             className="link link__pri"
             to="/reservation"
             swipe
+            top="entry"
             direction="left"
+            entryOffset={80}
           >
             <IoIosArrowRoundForward /> Book Now
           </Link>
@@ -95,30 +103,28 @@ const Featured = ({ data }) => {
         </div>
       </div>
       <a.div className="menu hidden margin__y--m" style={props}>
-        <div {...bind} className=" ">
+        <div ref={bind} className=" ">
           <div className="flex flex__column flex__row--m">
             <div className="h5 measure">
               This is the only period of the year when meat will play a starring
-              role at noma,and we will serve everything we can get our hands on:
+              role at noma, and we will serve everything we can get our hands
+              on:
             </div>
             <ul className="h6 margin__y">
               <li>
                 <BsDash />a teal for 2
               </li>
               <li>
-                <BsDash /> a goose for 4
+                <BsDash />a goose for 4
               </li>
               <li>
-                <BsDash />
-                leg of moose
+                <BsDash />a leg of moose
               </li>
               <li>
-                <BsDash />
-                reindeer tongue
+                <BsDash />a reindeer tongue
               </li>
               <li>
-                <BsDash />
-                wild duck
+                <BsDash />a wild duck
               </li>
             </ul>
           </div>
@@ -211,6 +217,7 @@ const HomePage = ({ data }) => {
                   className="link link__pri"
                   to="reservation"
                   swipe
+                  top="entry"
                   direction="right"
                 >
                   <IoIosArrowRoundForward /> Book Now
@@ -229,7 +236,7 @@ const HomePage = ({ data }) => {
               </div>
             </div>
             <a.div className="menu hidden margin__y--m" style={props}>
-              <div {...bind} className=" ">
+              <div ref={bind} className=" ">
                 <div className="flex">
                   <div className="h6 measure">
                     Usually during the summer months, we would be serving our
@@ -281,7 +288,7 @@ const HomePage = ({ data }) => {
               <Link
                 className="link link__pri"
                 to="reservation"
-                swipe
+                swipe top="entry"
                 direction="right"
               >
                 <IoIosArrowRoundForward /> Book Now
@@ -289,7 +296,7 @@ const HomePage = ({ data }) => {
               <Link
                 className="link link__pri"
                 to="reservation"
-                swipe
+                swipe top="entry"
                 direction="right"
               >
                 <IoIosArrowRoundForward /> View Menu
