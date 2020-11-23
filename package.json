@@ -38,6 +38,7 @@
     "lodash": "^4.17.15",
     "markdown-it": "^11.0.0",
     "markdown-it-attrs": "^3.0.2",
+    "node-sass": "^4.14.1",
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
