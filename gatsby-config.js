@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Game and Forest Demo",
-    description: "",
+    title: "Noma - Demo",
+    description: "Noma website concept",
     author: "@NorthernWindSouthernSun",
     siteUrl: "https://lucaszapico.space",
   },
